@@ -16,3 +16,12 @@ h1{
 i{
     cursor: pointer;
 }
+input[type=checkbox]:checked+p.strikethrough{
+    text-decoration:line-through;
+    color: crimson;
+}
+.pstrikethrough
+{
+    text-decoration:line-through;
+    color: crimson;
+}

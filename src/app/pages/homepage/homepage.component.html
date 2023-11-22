@@ -2,15 +2,16 @@
 <h1 class="text-center py-5">My To-Do List</h1>
 <div class="container d-flex flex-column justify-content-center align-items-center">
     <div class="addInput my-5">
-        <input type="text"/>
+        <input class="inputAdd" type="text" [(ngModel)]="newTaskTitle" />&nbsp;
+        <button class="btn btn-primary" (click)="addNewTask()">Add items</button>
     </div>
     <div class="box p-3">
         <ul class="list">
             @for(items of todos;track items.id){
             <li class="d-flex justify-content-between">
             <input type="checkbox">
-            <p>{{items.title}}</p>
-            <i class="bi bi-trash-fill"></i>
+            <p class="strikethrough"[ngClass]="items.completed?'pstrikethrough':'null'">{{items.title}}</p>
+            <i class="bi bi-trash text-danger" (click)="del(items)"></i>
             </li>
         }
         </ul>
